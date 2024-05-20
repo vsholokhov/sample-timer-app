@@ -1,0 +1,13 @@
+<div class="flex justify-center content-center my-5" id="main">
+  @defer (when loaded()) {
+    @if (timeLeft !== 0) {
+      <div class="mx-2">Seconds left to deadline:</div>
+      <div [ngClass]="{'text-red-500 font-bold': timeLeft < 5}" id="timeLeft">{{ timeLeft }}</div>
+    } @else {
+      <div>Time has run out!</div>
+    }
+  } @placeholder {
+    <div class="mx-2">Please wait while loading</div>
+  }
+
+</div>
